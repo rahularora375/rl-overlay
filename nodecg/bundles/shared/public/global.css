@@ -1,0 +1,40 @@
+html, body{
+    font-family: sans-serif;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    background-size: contain;
+    background-position: center;
+}
+
+.supports-fade {
+    transition: opacity 0.5s;
+}
+
+.fade {
+    opacity: 0;
+}
+
+@keyframes fill {
+    from { height: 0%; }
+    to { height: 100%; }
+}
+
+.slide-out-bottom {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-in-bottom {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#setTimerBtn, #pauseTimerBtn, #startTimerBtn {
+    flex: 1;
+}

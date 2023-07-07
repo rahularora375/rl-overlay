@@ -1,0 +1,661 @@
+body {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.scoreboard {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 76px;
+    width: 50%;
+    color: white;
+}
+
+.scoreboard-left, .scoreboard-right {
+    height: 100%;
+    flex: 44;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.scoreboard-left > .top {
+    flex: 82;
+    display: flex;
+    padding-left: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.left-slanted-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: skewX(40deg);
+    transform-origin: top left;
+    z-index: -1;
+}
+
+.scoreboard-left > .bottom {
+    align-self: flex-end;
+    flex: 18;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    width: 20%;
+}
+
+.scoreboard-middle {
+    flex: 12;
+    background-color: black;
+}
+
+.scoreboard-middle-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.scoreboard-middle-container > .left-slanted-div {
+    width: 50%;
+    transform: skewX(20deg);
+    left: -22px;
+}
+
+.scoreboard-middle-container > .left-slanted-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #40e6d4, #a300e4);
+}
+
+.scoreboard-middle-container > .right-slanted-div {
+    transform: skewX(-20deg);
+    right: -22px;
+    width: 50%;
+}
+
+.scoreboard-middle-container > .right-slanted-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #a300e4, #40e6d4);
+}
+
+.game-time {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'ScoutCond-Regular';
+    font-size: 52px;
+    line-height: 68px;
+}
+
+.scoreboard-right > .top {
+    flex: 82;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    padding-right: 50px;
+}
+
+.right-slanted-div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: skewX(-40deg);
+    transform-origin: top right;
+    z-index: -1;
+}
+
+.scoreboard-right > .bottom {
+    color: white;
+    flex: 18;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: center;
+    font-family: "Scout-Thin";
+    width: 20%;
+}
+
+.bottom-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+.game-number, .best-of {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-family: "Scout-Thin";
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.best-of {
+    padding-left: 4px;
+}
+
+.game-number {
+    padding-right: 4px;
+}
+
+.team-left, .team-right {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.team-left > div, .team-right > div { 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.team-left > div:nth-child(1) { 
+    flex: 10;
+}
+
+.team-left > div:nth-child(2) { 
+    flex: 35;
+    justify-content: flex-start;
+    padding-left: 16px;
+    font-family: 'ScoutCond-Regular';
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.team-left > div:nth-child(3) { 
+    flex: 25;
+    color: #40e6d4;
+    padding-left: 16px;
+}
+
+.team-right > div:nth-child(1) { 
+    flex: 25;
+    color: #a300e4;
+    padding-right: 16px;
+}
+
+.team-right > div:nth-child(2) { 
+    flex: 35;
+    justify-content: flex-end;
+    padding-right: 16px;
+    font-family: 'ScoutCond-Regular';
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.team-right > div:nth-child(3) { 
+    flex: 10;
+}
+
+.team-left {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.team-right {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.score-container {
+    position: relative;
+    z-index: 1;
+}
+
+.score-container > .left-slanted-div {
+    background-color: #08314e;
+    transform: skewX(20deg);
+    border-left: 3px solid #40e6d4;
+    opacity: 0.9;
+}
+
+.score-container > .right-slanted-div {
+    background-color: #08314e;
+    transform: skewX(-20deg);
+    border-right: 3px solid #a300e4;
+    opacity: 0.9;
+}
+
+.score {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 54px;
+    font-family: 'ScoutCond-Regular';
+    font-size: 44px;
+}
+
+#team-left-score {
+    padding-right: 16px;
+}
+
+#team-right-score {
+    padding-left: 16px;
+}
+
+.team-logo > img {
+    max-width: 38px;
+    max-height: 36px;
+}
+
+.speedometer {
+    position: absolute;
+    width: 172px;
+    height: 172px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #a300e4, #40e6d4);
+    bottom: 48px;
+    right: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    overflow: hidden;
+    width: 162px;
+    height: 162px;
+    background: black;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "ScoutCond-Regular";
+    letter-spacing: 1px;
+}
+  
+.speedometer-number {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+}
+
+.speedometer-boost {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.speedometer-boost > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boost-number {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.boost-text {
+    font-size: 24px;
+}
+
+
+:root {
+  --dot-diameter: 350px;
+  --circle-border-width: 3px;
+  --default-color: gainsboro;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 40px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+svg {
+  filter: drop-shadow(0 0 10px rgb(0 0 0 / 0.4));
+}
+
+.circle-container {
+  width: var(--dot-diameter);
+  height: var(--dot-diameter);
+  transform: rotate(-225deg);
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 75 100;
+  stroke-linecap: round;
+}
+
+.circle-container__background {
+  fill: none;
+  stroke: var(--default-color);
+  stroke-width: var(--circle-border-width);
+  stroke-dasharray: 75 100;
+  stroke-linecap: round;
+}
+
+.circle-container__progress {
+  fill: none;
+  stroke-linecap: round;
+  stroke: url(#gradient);
+  stroke-dasharray: 75 100;
+  stroke-linecap: round;
+  stroke-width: var(--circle-border-width);
+  transition: stroke-dashoffset 0.5s ease-in-out;
+  stroke-dashoffset: 74;
+}
+
+.stop1 {
+  stop-color: #e66465;
+}
+
+.stop2 {
+  stop-color: #9198e5;
+}
+
+.player-names {
+    position: absolute;
+    width: 100%;
+    height: 116px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team-left-names, .team-right-names {
+    width: 256px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-info-container {
+    margin-top: 8px;
+    flex: 1;
+    background-color: #0e0f10;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-info{
+    flex: 86;
+    display: flex;
+    align-items: center;
+    font-family: 'Scout-Regular';
+}
+
+.boost-bar {
+    flex: 14;
+    transition: width 0.7s ease-in-out;
+    background: linear-gradient(to right, #a300e4, #40e6d4);
+    display: flex;
+    width: 0%;
+}
+
+.player-name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding-left: 8px;
+    flex: 1;
+}
+
+.player-boost {
+    display: flex;
+    align-items: center;
+    color: #40e6d4;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+    flex: 1;
+}
+
+.team-left-names > .player-info-container {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.team-right-names > .player-info-container {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.team-right-names > .player-info-container > .boost-bar {
+    align-self: flex-end;
+}
+
+.team-right-names > .player-info-container > .player-info > .player-name {
+    justify-content: flex-end;
+    padding-left: 0px;
+    padding-right: 8px;
+}
+
+.team-right-names > .player-info-container > .player-info > .player-boost {
+    padding-left: 8px;
+    padding-right: 0px;
+    justify-content: flex-start;
+    color: #a300e4;
+}
+
+.current-player {
+    position: absolute;
+    width: 512px;
+    height: 48px;
+    bottom: 24px;
+    left: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.current-player > .left {
+    height: 100%;
+    flex: 1;
+    font-size: 18px;
+}
+
+.current-player > .left > .player-info-container{
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100%;
+    margin-top: 0px;
+    padding-left: 8px;
+}
+
+.current-player > .left > .player-info-container > .player-info{
+    flex: 90;
+}
+
+.current-player > .left > .player-info-container > .boost-bar{
+    flex: 10;
+}
+
+.current-player > .left > .player-info-container > .player-info > .player-name {
+    padding-left: 0px;
+}
+
+.current-player > .right {
+    height: 100%;
+    flex: 1;
+    background-color: black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 3px solid #a300e4;
+    border-left: 3px solid #40e6d4;
+    box-sizing: border-box;
+    display: flex;
+    font-family: "ScoutCond-Regular";
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.current-player > .right > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.current-player > .right > div > div:nth-child(1) { 
+    color: white;
+}
+
+.current-player > .right > div > div:nth-child(2) { 
+    color: #40e6d4;
+}
+
+.replay-card {
+    position: absolute;
+    width: 100%;
+    height: 64px;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.replay-card-container {
+    width: 720px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
+    padding-right:10px;
+    font-family: 'ScoutCond-Regular';
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+
+.replay-card-container > div {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    margin-left: 16px;
+}
+
+.replay-card-container > div > div:nth-child(1){
+    flex: 40;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.replay-card-container > div > div:nth-child(2){
+    flex: 60;
+    display: flex;
+    line-height: 64px;
+    justify-content: flex-start;
+    color: #40e6d4;
+    padding-left: 16px;
+}
+
+.scorer > div > img {
+    max-width: 48px;
+    max-height: 44px;
+}
+
+.assister > div > img {
+    max-width: 46px;
+    max-height: 50px;
+}
+
+.goal-speed > div > img {
+    max-width: 48px;
+    max-height: 36px;
+}
+
+.goal-time > div > img {
+    max-width: 48px;
+    max-height: 34px;
+}
+
+.replay-text {
+    color: white;
+    position: absolute;
+    right: 24px;
+    width: 140px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.replay-text > div:nth-child(1) {
+    display: flex;
+    justify-content: flex-end;
+    line-height: 64px;
+    font-family: 'ScoutCond-Regular';
+    font-size: 36px;
+    letter-spacing: 1px;
+    flex: 7;
+}
+
+.replay-text > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+}
+
+#replay-img {
+    max-width: 30px;
+    max-height: 26px;
+}

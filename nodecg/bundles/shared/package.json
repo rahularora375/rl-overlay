@@ -1,0 +1,74 @@
+{
+  "name": "shared",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "Rahul Arora",
+    "email": "aroora.rahul@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "mount": [
+      {
+        "directory": "public",
+        "endpoint": "public"
+      }
+    ],
+    "assetCategories": [
+      {
+        "name": "font",
+        "title": "font",
+        "allowedTypes": [
+          "ttf",
+          "otf"
+        ]
+      },
+      {
+        "name": "team-logos",
+        "title": "team-logos",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "png",
+          "svg"
+        ]
+      },
+      {
+        "name": "other-icons",
+        "title": "other-icons",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "png",
+          "svg",
+          "gif"
+        ]
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT"
+}

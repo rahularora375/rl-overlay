@@ -1,0 +1,39 @@
+.monospace {
+    font-family: monospace;
+}
+
+.inputBlock {
+    display: block;
+}
+
+.inputBlock label {
+    display: inline-block;
+    font-size: 13.33px;
+    min-width: 111px;
+}
+
+.inputBlock input[type="text"] {
+    display: inline-block;
+    width: 116px;
+    font-size: 13.33px;
+}
+
+.buttonRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+button {
+    margin-right: 10px;
+    font-size: 13.33px;
+}
+
+select {
+    display: inline-block;
+    font-size: 13.33px;
+    min-width: 111px;
+    width: 80%;
+    height: 21px;
+    box-sizing: border-box;
+}

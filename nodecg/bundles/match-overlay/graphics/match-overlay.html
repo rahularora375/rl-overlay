@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Match Overlay</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="/bundles/shared/public/global.css">
+		<link rel="stylesheet" href="match-overlay.css">
+	</head>
+	<body>
+		<div class="scoreboard">
+			<div class="scoreboard-left">
+				<div class="top">
+					<div class="left-slanted-div"></div>
+					<div id="team-left" class="team-left">
+						<div id="team-left-logo" class="team-logo"></div>
+						<div id="team-left-name" class="name"></div>
+						<div class="score-container">
+							<div class="left-slanted-div"></div>
+							<div id="team-left-score" class="score">0</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="bottom-container">
+						<div class="left-slanted-div"></div>
+						<div id="best-of" class="best-of"></div>
+					</div>
+				</div>
+			</div>
+			<div class="scoreboard-middle">
+				<div class="scoreboard-middle-container">
+					<div class="left-slanted-div"></div>
+					<div id="game-time" class="game-time">0:00</div>
+					<div class="right-slanted-div"></div>
+				</div>
+			</div>
+			<div class="scoreboard-right">
+				<div class="top">
+					<div  id="team-right" class="team-right">
+						<div class="score-container">
+							<div id="team-right-score" class="score">0</div>
+							<div class="right-slanted-div"></div>
+						</div>
+						<div id="team-right-name" class="name"></div>
+						<div id="team-right-logo" class="team-logo"></div>
+					</div>
+					<div class="right-slanted-div"></div>
+				</div>
+
+				<div class="bottom">
+					<div class="bottom-container">
+						<div id="game-number" class="game-number"></div>
+						<div class="right-slanted-div"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="player-names" class="player-names">
+			<div id="team-left-names" class="team-left-names"></div>
+			<div id="team-right-names" class="team-right-names"></div>
+		</div>
+
+		<div id="current-player" class="current-player">
+			<div class="left"></div>
+			<div class="right">
+				<div>
+					<div>GOALS</div>
+					<div class="goals" id="goals">0</div>
+				</div>
+				<div>
+					<div>SHOTS</div>
+					<div class="shots" id="shots">0</div>
+				</div>
+				<div>
+					<div>SAVES</div>
+					<div class="saves" id="saves">0</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="replay-card" class="replay-card">
+			<div id="replay-card-container" class="replay-card-container">
+				<div class="replay-info scorer">
+					<div></div>
+					<div id="scorer"></div>
+				</div>
+				<div class="replay-info assister">
+					<div></div>
+					<div id="assister"></div>
+				</div>
+				<div class="replay-info goal-speed">
+					<div></div>
+					<div id="goal-speed"></div>
+				</div>
+				<div class="replay-info goal-time">
+					<div></div>	
+					<div id="goal-time"></div>
+				</div>
+			</div>
+			<div class="replay-text">
+				<div>REPLAY</div>
+				<div>
+					<img id="replay-img">
+				</div>
+			</div>
+		</div>
+
+		<div id="speedometer" class="speedometer">
+			<div class="container">
+				<div class="speedometer-boost">
+					<div class="boost-number" id="boost-number">0</div>
+					<div class="boost-text" id="boost-text">BOOST</div>
+				</div>
+				<div class="speedometer-number" id="speed-number">0 KPH</div>
+
+				<svg class="circle-container" viewBox="2 -2 28 36" xmlns="http://www.w3.org/2000/svg">
+					<linearGradient id="gradient">
+						<stop class="stop1" offset="0%" />
+						<stop class="stop2" offset="100%" />
+					</linearGradient>
+					<circle class="circle-container__background" r="16" cx="16" cy="16" shape-rendering="geometricPrecision"></circle>
+					<circle id="speed-meter" class="circle-container__progress" r="16" cx="16" cy="16"  shape-rendering="geometricPrecision"></circle>
+				</svg>
+			</div>
+		</div>
+
+		<script src="/bundles/shared/public/global.js"></script>
+		<script src="match-overlay.js"></script>
+	</body>
+</html>
