@@ -153,6 +153,7 @@ makePlayerInfoContainerDivs(currentPlayerDiv.children[0], false, 1);
 slideOutDivs(replayCardDiv);
 
 WsSubscribers.init(49322, true);
+
 WsSubscribers.subscribe("game", "update_state", (data) => {
     const arrayOfPlayerObjects = Object.values(data["players"]).map((value, index) => {
         return { id: Object.keys(data["players"])[index], ...value };

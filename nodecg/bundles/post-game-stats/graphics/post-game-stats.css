@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.post-game-stats-table {
+    width: 80%;
+    height: 50%;
+    margin-top: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    color: #4c3d28;
+    font-family: "ScoutCond-Regular";
+}
+
+tr {
+    border-bottom: 4px solid #dac4a5;
+    box-sizing: border-box;
+}
+
+tr:nth-child(even) {
+    background-color: #f2ece0;
+}
+  
+tr:nth-child(odd) {
+    background-color: #e6d7c3;
+}
+
+tr:last-child {
+    border-bottom: 4px solid #9e7f51;
+}
+
+thead tr {
+    background-color: #dac4a5 !important;
+    border-bottom: 0px solid #9e7f51 !important;
+}
+
+th, td {
+    text-align: center;
+}
+
+td {
+    font-size: 26px !important;
+    height: 53px;
+    line-height: 53px;
+    padding: 1px;
+}
+
+th {
+    font-size: 26px !important;
+    font-weight: 100;
+    padding: 6px !important;
+}
