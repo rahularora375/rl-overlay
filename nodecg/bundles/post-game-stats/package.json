@@ -20,15 +20,6 @@
   ],
   "nodecg": {
     "compatibleRange": "^2.0.0",
-    "dashboardPanels": [
-      {
-        "name": "post-game-stats",
-        "title": "Post Game Stats",
-        "width": 2,
-        "file": "post-game-stats.html",
-        "headerColor": "#525F78"
-      }
-    ],
     "graphics": [
       {
         "file": "post-game-stats.html",
