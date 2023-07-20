@@ -172,7 +172,10 @@ WsSubscribers.subscribe("game", "update_state", (data) => {
     scoreboardTeamRightScoreDiv.innerHTML = teams["1"]["score"];
 
     // Adding Game Time To Scoreboard
-    gameTimeDiv.innerHTML = gameTime;
+    if (data["game"]["isOT"])
+        gameTimeDiv.innerHTML = '+' + gameTime;
+    else
+        gameTimeDiv.innerHTML = gameTime;
 
     const team0PlayerInfoContainers = teamLeftNameDiv.getElementsByClassName("player-info-container");
     const team1PlayerInfoContainers = teamRightNameDiv.getElementsByClassName("player-info-container");
